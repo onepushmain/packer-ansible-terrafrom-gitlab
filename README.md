@@ -28,4 +28,8 @@ O ansible é uma ferramenta criada pela Red Hat para automatizar a instação de
 
 O Terraform é outra ferramenta criada pelo Hashicorp, e é a principal ferramenta de IaaC. Ela nos ajuda a automatizar a implementação de infraestutura em cloud.
 
+| [<img src="https://github.com/lucascdourado.png?size=115" width=115><br><sub>@lucascdourado</sub>](https://github.com/lucascdourado) | [<img src="https://github.com/Tawliew.png?size=115" width=115><br><sub>@Tawliew</sub>](https://github.com/Tawliew) |
+
+| :---: | :---: |
+
 
