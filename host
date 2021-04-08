@@ -1,1 +1,0 @@
-gitlab-runner ansible_host=18.206.98.5 ansible_ssh_private_key_file=~/team42/luizf.pem ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
