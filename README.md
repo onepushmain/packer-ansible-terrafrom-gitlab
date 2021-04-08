@@ -17,7 +17,7 @@
 
 ## Ferramentas
 
-* ### Packer
+* ## Packer
   * O Packer é uma ferramenta criada pela hashicorp para auxiliar na criação de AMIs. Sua sintaxe funciona como um Json ou um arquivo HCL. No arquivo, são definidas algumas configurações da AMI na aba de **builders** (como nome, ami base, etc) e o que será executado antes da AMI ser criada como **provisioners**. Nesse caso, nosso **provisioner** é o Ansible.
 
 * ## Ansible
