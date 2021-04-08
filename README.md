@@ -31,7 +31,6 @@ O Terraform é outra ferramenta criada pelo Hashicorp, e é a principal ferramen
 ## Autores
 
 | [<img src="https://github.com/lucascdourado.png?size=115" width=115><br><sub>@lucascdourado</sub>](https://github.com/lucascdourado) | [<img src="https://github.com/Tawliew.png?size=115" width=115><br><sub>@Tawliew</sub>](https://github.com/Tawliew) |
-
 | :---: | :---: |
 
 
