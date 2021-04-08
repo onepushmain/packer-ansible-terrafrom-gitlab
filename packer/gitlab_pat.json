@@ -1,0 +1,35 @@
+{
+    "builders": [
+      {
+        "type": "amazon-ebs",
+        "region": "us-east-1",
+        "profile": "Team42",
+        "subnet_id": "subnet-XXXXXX",
+        "security_group_id": "sg-XXXXXX",
+        "source_ami": "ami-XXXXXXXXX",
+        "associate_public_ip_address": true,
+        "instance_type": "t3.nano",
+        "ssh_username": "ubuntu",
+        "ami_name": "gitlab-runner-spawner-PAT",
+        "ami_description": "Gitlab-Runner-Spawner AMI.",
+        "run_tags": {
+          "owner": "Mandic",
+          "Environment": "gitlab",
+          "Packer": "yes",
+          "Name": "gitlab-runner-spawner-packer"
+        },
+        "tags": {
+          "owner": "Mandic",
+          "Environment": "gitlab",
+          "Packer": "true",
+          "Name": "gitlab-runner-spawner"
+        }
+      }
+    ],
+    "provisioners": [
+        {
+            "type": "ansible",
+            "playbook_file": "../gitlab.yaml"
+        }
+    ]
+  }

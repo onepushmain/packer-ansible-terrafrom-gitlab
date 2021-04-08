@@ -1,0 +1,48 @@
+concurrent = 100
+check_interval = 0
+
+[[runners]]
+  name = "gitlab-runner-spawner"
+  url = "https://gitlab.com/"
+  token = ""
+  executor = "docker+machine"
+  [runners.docker]
+    image = "ubuntu"
+    privileged = true
+    disable_cache = true
+  [runners.cache]
+    Type = "s3"
+    Shared = true
+    Path= "/cache"
+    [runners.cache.s3]
+      ServerAddress = "s3.amazonaws.com"
+      AccessKey = ""
+      SecretKey = ""
+      BucketName = "gitlab-runner-spawner"
+      BucketLocation = "us-east-1"
+  [runners.machine]
+    IdleCount = 0
+    IdleTime = 10
+    MaxBuilds = 100
+    MachineDriver = "amazonec2"
+    MachineName = "gitlab-runner-spawned-%s"
+    MachineOptions = [
+      "amazonec2-access-key=",
+      "amazonec2-secret-key=",
+      "amazonec2-region=us-east-1",
+      "amazonec2-vpc-id=vpc-XXXX",
+      "amazonec2-zone=X",
+      "amazonec2-root-size=32"
+      "amazonec2-subnet-id=subnet-XXXX",
+      "amazonec2-use-private-address=true",
+      "amazonec2-tags=runner-manager-name,gitlab-aws-autoscaler,gitlab,true,gitlab-runner-autoscale,true",
+      "amazonec2-instance-type=m5.large",
+      "amazonec2-request-spot-instance=true",
+      "amazonec2-spot-price=",
+      "amazonec2-ami=ami-XXXX"
+    ]
+    [[runners.machine.autoscaling]]
+      Periods = ["* * 0-6 * * * *"]
+      IdleCount = 0
+      IdleTime = 0
+      Timezone = "America/Sao_Paulo"

@@ -1,0 +1,64 @@
+---
+- name: Update apt-get repo and cache
+  apt: 
+    update_cache: yes
+    force_apt_get: yes
+    cache_valid_time: 3600
+
+- name: Upgrade all apt packages
+  apt:
+    upgrade: dist 
+    force_apt_get: yes
+
+- name: Update all packages to their latest version
+  apt:
+    name: "*"
+    state: latest
+
+- name: add Docker key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: add Docker repo
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu bionic stable
+    state: present
+
+- name: install dependecies
+  apt:
+    name: "{{ item }}"
+    state: latest
+  loop:
+  - apt-transport-https 
+  - ca-certificates
+  - curl
+  - gnupg
+  - lsb-release
+  - python3
+  - python3-setuptools
+  - python3-pip
+  - virtualenv
+  - docker.io
+  - docker-ce
+
+- name: Install module docker for python
+  pip:
+    name: docker
+
+- name: Pull default Docker image
+  docker_image:
+    name: "{{ item }}"
+    source: pull
+  loop:
+  - ubuntu
+  - ruby:2.6.6
+  - ruby:2.4.10
+  - mysql:5.7.30
+  - mysql:5.7.23
+
+- name: Install docker+machine binary
+  get_url:
+    url: https://github.com/docker/machine/releases/download/v0.16.0/docker-machine-Linux-x86_64
+    dest: /usr/local/bin/docker-machine
+    mode: '0755'

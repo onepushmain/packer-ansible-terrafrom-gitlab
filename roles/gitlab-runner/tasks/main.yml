@@ -1,0 +1,18 @@
+---
+# tasks file for gitlab-runner
+- name: Add gitlab REPO
+  script: ../files/gitlab_runner.sh
+
+- name: install gitlab-runner
+  apt:
+    name: "{{ item }}"
+    state: latest
+  loop:
+  - gitlab-runner
+  - python3-gitlab
+
+- name: Add configuration of spawner
+  template:
+    src: arquivo_exemplo.toml
+    dest: /etc/gitlab-runner/config.toml.example
+  notify: restart gitlab-runner service

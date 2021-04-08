@@ -1,0 +1,8 @@
+- name: apply playbook
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+
+  roles:
+    - docker
+    - gitlab-runner
