@@ -1,9 +1,9 @@
 # Gitlab PAT 
-* **Instalação automática de um runner privado do Gitlab utilizando a stack PACKER/ANSIBLE/TERRAFORM**
+ **Instalação automática de um runner privado do Gitlab utilizando a stack PACKER/ANSIBLE/TERRAFORM**
 
 ## Como funciona
 
-* O Packer irá criar uma AMI na conta utilizando como provisioner o 2 playbooks do ansible: Um que instala o docker e o docker+machine, e outro que instala o gitlab-runner. No final, o Terraform sobe a instância com a AMI criada.
+ O Packer irá criar uma AMI na conta utilizando como provisioner o 2 playbooks do ansible: Um que instala o docker e o docker+machine, e outro que instala o gitlab-runner. No final, o Terraform sobe a instância com a AMI criada.
 
 ## Como executar
 
