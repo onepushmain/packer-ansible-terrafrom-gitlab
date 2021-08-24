@@ -28,7 +28,7 @@
 
 ## Autores
 
-| [<img src="https://github.com/lucascdourado.png?size=115" width=115><br><sub>@lucascdourado</sub>](https://github.com/lucascdourado) | [<img src="https://github.com/Tawliew.png?size=115" width=115><br><sub>@onepushmain</sub>](https://github.com/onepushmain) |
+| [<img src="https://github.com/lucascdourado.png?size=115" width=115><br><sub>@lucascdourado</sub>](https://github.com/lucascdourado) | [<img src="https://github.com/onepushmain.png?size=115" width=115><br><sub>@onepushmain</sub>](https://github.com/onepushmain) |
 | :---: | :---: |
 
 
